@@ -1,0 +1,34 @@
+.devices-img {
+	height: 110px;
+	width: 110px;
+  }
+
+.back-btn {
+	width: 20px;
+	height: 20px;
+	margin-top:10px;
+}
+
+.sidemenu{
+	background-color:'#b3b3ff';
+	width:'55%';
+	height:'100%'
+}
+
+#deviceList > div {
+	margin:'5px 2px'
+}
+
+
+@media all and (min-width: 767px) {
+	.sidemenu {
+		width:'50%';
+	  }
+
+  }
+
+  @media all and (min-width: 550px) {
+	.sidemenu {
+		width:'50%';
+	  }
+  }
