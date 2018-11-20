@@ -17,21 +17,6 @@ const SideMenu = () => (
 		</div>
 		<div className='flex-container'>
 			{deviceList.map(device => <Device key={device.name} name={device.name} url={device.url} location={device.location}/>)}
-			{/* <div style={{margin:'30px 15px'}}>
-				<img src='/images/lamp.png' className="devices-img" alt="lamp" />
-			</div>
-			<div style={{margin:'30px 15px'}}>
-				<img src='/images/ac.png' className="devices-img" alt="ac" />
-			</div>
-			<div style={{margin:'30px 15px'}}>
-				<img src='/images/lock.png' className="devices-img" alt="door lock" />
-			</div>
-			<div style={{margin:'30px 15px'}}>
-				<img src='/images/tv.png' className="devices-img" alt="tv" />
-			</div>
-			<div style={{margin:'30px 15px'}}>
-				<img src='/images/thermostat.png' className="devices-img" alt="thermostat" />
-			</div> */}
 		</div>
 	</div>
 )

@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import Mode from './mode';
 import Line from './commom/line';
 import Shade from './commom/shade';
+import RangeSelector from './commom/rangeSelector';
 import './device.css';
 
 const shades=['#ff471a', '#b380ff', '#66ffff', '#0099cc', '#ffb3d9' ];
@@ -23,7 +24,8 @@ class DeviceContainer extends Component{
     super(props)
     this.state={
       slectedShade:'',
-      slectedMode:''
+      slectedMode:'',
+      intensity:50
     }
   }
   selectShade(shade){
@@ -32,6 +34,11 @@ class DeviceContainer extends Component{
     })
   }
 
+  selectIntensity(value){
+    this.setState({
+      intensity: value
+    })
+  }
   render() {
     return(<div className="col-sm-12">
     <div style={{display:'flex', marginTop:'40px'}}>
@@ -61,12 +68,15 @@ class DeviceContainer extends Component{
 
     <div style={{display:'flex', marginTop:'15px'}}>
       <div className="col-sm-12" style={{marginTop:'8px', flexDirection:'column'}}>
-          {modes.map(mode => <Mode mode={mode} imageUrl={modeImages[mode.type]}/> )}
+          {modes.map((mode, index) => <Mode mode={mode} imageUrl={modeImages[mode.type]} selected={index === 0}/> )}
       </div>
     </div>
 
     <Line heading='Intensity'/>
 
+    <div style={{ margin: '25px 0 0 25px'}}>
+      <RangeSelector selectIntensity={this.selectIntensity.bind(this)} intensity={this.state.intensity}/>
+    </div>
   </div>)
   }
 }

@@ -1,0 +1,11 @@
+.mode-wrapper{
+	margin:'5px 0';
+	height:'30px';
+	display:'flex';
+	flex-direction: 'row';
+	justify-content:'space-evenly'
+}
+
+.mode-selected{
+	background-image: 'linear-gradient(to right, #dd99ff, #b3c6ff)'
+}
