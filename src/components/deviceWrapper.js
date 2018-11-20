@@ -5,7 +5,7 @@ import Shade from './commom/shade';
 import RangeSelector from './commom/rangeSelector';
 import './device.css';
 
-const shades=['#ff471a', '#b380ff', '#66ffff', '#0099cc', '#ffb3d9' ];
+const shades=[{id:'shade1', color:'#ff471a'}, {id:'shade2', color:'#b380ff'}, {id:'shade3', color:'#66ffff'}, {id:'shade4', color:'#0099cc'}, {id:'shade5', color:'#ffb3d9'} ];
 
 const modes = [
   {id:'mode1', type:'morning', intensity:'50%'},
@@ -23,14 +23,20 @@ class DeviceContainer extends Component{
   constructor(props){
     super(props)
     this.state={
-      slectedShade:'',
-      slectedMode:'',
+      slectedShade: shades[0].id,
+      slectedMode: modes[0].id,
       intensity:50
     }
   }
   selectShade(shade){
     this.setState({
       slectedShade: shade
+    })
+  }
+
+  selectMode(mode){
+    this.setState({
+      slectedMode: mode
     })
   }
 
@@ -61,14 +67,14 @@ class DeviceContainer extends Component{
     <Line heading='shades'/>
 
      <div style={{display:'flex',flexDirection: 'row', marginTop:'30px', flexWrap: 'nowrap', justifyContent:'space-around'}}>
-          {shades.map((shade, index) => <Shade color={shade} selected={index === 0}/>)}
+          {shades.map((shade, index) => <Shade id={shade.id} color={shade.color} selected={this.state.slectedShade === shade.id} selectShade={this.selectShade.bind(this)}/>)}
     </div>
 
     <Line heading='Mode'/>
 
     <div style={{display:'flex', marginTop:'15px'}}>
       <div className="col-sm-12" style={{marginTop:'8px', flexDirection:'column'}}>
-          {modes.map((mode, index) => <Mode mode={mode} imageUrl={modeImages[mode.type]} selected={index === 0}/> )}
+          {modes.map((mode, index) => <Mode mode={mode} imageUrl={modeImages[mode.type]} selected={mode.id === this.state.slectedMode} selectMode={this.selectMode.bind(this)}/> )}
       </div>
     </div>
 

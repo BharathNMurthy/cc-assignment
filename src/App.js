@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import DeviceContainer from './components/deviceWrapper';
 import SideMenu from './components/commom/sideMenu'
+import './components/commom/sideMenu.css'
 
 const deviceList =[
 	{name:'Bed Lamp', url:'/images/lamp.png', location:'In Bedroom'},
@@ -15,10 +16,10 @@ class App extends Component {
     return (
       <div className='container-fluid'>
         <div className='row col-xs-12'>
-          <div className='col-xs-3' style={{width:'30%'}}>
+          <div className='col-xs-6 col-md-4 sidemenu'>
             <SideMenu />
           </div>
-          <div className='col-xs-7'>
+          <div className='col-xs-6 ol-md-8'>
             <DeviceContainer deviceDetails={deviceList[0]}/>
           </div>
         </div>

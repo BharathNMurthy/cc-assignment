@@ -2,7 +2,6 @@ import React,{Component} from 'react';
 import './rangeSelector.css';
 
 class RangeSelector extends Component{
-
 	onRangeChange=(event)=>{
 		this.props.selectIntensity( event.target.value);
 	}
@@ -13,7 +12,7 @@ class RangeSelector extends Component{
 				<input type="range" min="1" max="100" value={this.props.intensity} class="slider" id="myRange" onChange={this.onRangeChange.bind(this)}/>
 			</div>
 			<div style={{margin:'10px 0'}}>
-				{this.props.intensity}
+				<span style={{fontSize:'25px'}}><b>{this.props.intensity}</b></span>
 			</div>
 		</div>
 		);
