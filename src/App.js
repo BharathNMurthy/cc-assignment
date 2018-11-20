@@ -15,7 +15,7 @@ class App extends Component {
   render() {
     return (
       <div className='container-fluid'>
-        <div className='row col-xs-12'>
+        <div className='row col-xs-12  wrapper' >
           <div className='col-xs-6 col-md-4 sidemenu'>
             <SideMenu />
           </div>

@@ -24,20 +24,20 @@
 }
 
 @media all and (min-width: 1200px) {
-	.sidemenu {
+	.wrapper {
 		width:'30%';
 	  }
   }
 
 @media all and (min-width: 768px) {
-	.sidemenu {
+	.wrapper {
 		width:'50%';
 	  }
 
   }
 
   @media all and (min-width: 375px) {
-	.sidemenu {
+	.wrapper {
 		width:'50%';
 	  }
   }

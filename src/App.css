@@ -22,6 +22,24 @@
   color: #61dafb;
 }
 
+@media all and (min-width: 1200px) {
+	.wrapper {
+		width:'30%';
+	  }
+  }
+
+@media all and (min-width: 768px) {
+	.wrapper {
+		width:'50%';
+	  }
+
+  }
+
+  @media all and (min-width: 375px) {
+	.wrapper {
+		width:'50%';
+	  }
+  }
 /*
 @keyframes App-logo-spin {
   from {
