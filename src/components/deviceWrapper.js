@@ -1,11 +1,15 @@
-import React from 'react';
+import React,{Component} from 'react';
 import Mode from './mode';
+import Line from './commom/line';
+import Shade from './commom/shade';
 import './device.css';
 
+const shades=['#ff471a', '#b380ff', '#66ffff', '#0099cc', '#ffb3d9' ];
+
 const modes = [
-  {type:'morning', intensity:'50%'},
-  {type:'day', intensity:'30%'},
-  {type:'night', intensity:'100%'}
+  {id:'mode1', type:'morning', intensity:'50%'},
+  {id:'mode2', type:'day', intensity:'30%'},
+  {id:'mode3', type:'night', intensity:'100%'}
 ]
 
 const modeImages = {
@@ -13,67 +17,59 @@ const modeImages = {
   day:'/images/day-dk.png',
   night:'/images/night-dk.png'
 }
-const DeviceContainer =(props)=>(
-      <div className="col-sm-12">
-        <div style={{display:'flex', marginTop:'40px'}}>
-          <div className="col-sm-8" >
-            <span style={{textTransform: 'uppercase', fontSize:'28px'}}><b>Devices</b></span>
-          </div>
-          <div className="col-sm-4 " style={{ width:'100%', height:'30px', display:'flex', justifyContent:'flex-end'}}>
-            <div style={{width:'30px',backgroundColor:'#99ffce'}}>
-              <img src='/images/plus-dk.png' style={{ height: '30px'}} alt="add" />
-            </div>
-          </div>
-        </div>
+class DeviceContainer extends Component{
 
-        <div style={{display:'flex', marginTop:'40px'}}>
-          <div className="col-sm-8" >
-            <span style={{textTransform: 'uppercase', fontSize:'20px'}}><b>{props.deviceDetails.name}</b></span>
-          </div>
-        </div>
+  constructor(props){
+    super(props)
+    this.state={
+      slectedShade:'',
+      slectedMode:''
+    }
+  }
+  selectShade(shade){
+    this.setState({
+      slectedShade: shade
+    })
+  }
 
-         <div style={{display:'flex', marginTop:'40px'}}>
-          <div className="col-sm-1" style={{marginTop:'8px'}}>
-              <span style={{textTransform: 'uppercase', fontSize:'10px', color:'#ff66ff'}}><b>shades</b></span>
-          </div>
-          <div className="col-sm-11"  >
-           <hr/>
-          </div>
-        </div>
-
-         <div style={{display:'flex',flexDirection: 'row', marginTop:'30px', flexWrap: 'nowrap', justifyContent:'space-around'}}>
-              <div style={{ width:'22px', height:'22px', backgroundColor:'#ff471a'}}> <img src='/images/tick-wh.png' style={{ height: '22px'}} alt="tick" /></div>
-              <div style={{ width:'22px', height:'22px', backgroundColor:'#b380ff'}}></div>
-              <div style={{ width:'22px', height:'22px', backgroundColor:'#66ffff'}}></div>
-              <div style={{ width:'22px', height:'22px', backgroundColor:'#0099cc'}}></div>
-              <div style={{ width:'22px', height:'22px', backgroundColor:'#ffb3d9'}}></div>
-        </div>
-
-        <div style={{display:'flex', marginTop:'40px'}}>
-          <div className="col-sm-1" style={{marginTop:'8px'}}>
-              <span style={{textTransform: 'uppercase', fontSize:'10px', color:'#ff66ff'}}><b>Mode</b></span>
-          </div>
-          <div className="col-sm-11"  >
-           <hr/>
-          </div>
-        </div>
-
-        <div style={{display:'flex', marginTop:'15px'}}>
-          <div className="col-sm-12" style={{marginTop:'8px', flexDirection:'column'}}>
-              {modes.map(mode => <Mode mode={mode} imageUrl={modeImages[mode.type]}/> )}
-          </div>
-        </div>
-
-         <div style={{display:'flex', marginTop:'40px'}}>
-          <div className="col-sm-1" style={{marginTop:'8px'}}>
-              <span style={{textTransform: 'uppercase', fontSize:'10px', color:'#ff66ff'}}><b>Intensity</b></span>
-          </div>
-          <div className="col-sm-11"  >
-           <hr/>
-          </div>
+  render() {
+    return(<div className="col-sm-12">
+    <div style={{display:'flex', marginTop:'40px'}}>
+      <div className="col-sm-8" >
+        <span style={{textTransform: 'uppercase', fontSize:'28px'}}><b>Devices</b></span>
+      </div>
+      <div className="col-sm-4 " style={{ width:'100%', height:'30px', display:'flex', justifyContent:'flex-end'}}>
+        <div style={{width:'30px',backgroundColor:'#99ffce'}}>
+          <img src='/images/plus-dk.png' style={{ height: '30px'}} alt="add" />
         </div>
       </div>
+    </div>
 
-    );
+    <div style={{display:'flex', marginTop:'40px'}}>
+      <div className="col-sm-8" >
+        <span style={{textTransform: 'uppercase', fontSize:'20px'}}><b>{this.props.deviceDetails.name}</b></span>
+      </div>
+    </div>
+
+    <Line heading='shades'/>
+
+     <div style={{display:'flex',flexDirection: 'row', marginTop:'30px', flexWrap: 'nowrap', justifyContent:'space-around'}}>
+          {shades.map((shade, index) => <Shade color={shade} selected={index === 0}/>)}
+    </div>
+
+    <Line heading='Mode'/>
+
+    <div style={{display:'flex', marginTop:'15px'}}>
+      <div className="col-sm-12" style={{marginTop:'8px', flexDirection:'column'}}>
+          {modes.map(mode => <Mode mode={mode} imageUrl={modeImages[mode.type]}/> )}
+      </div>
+    </div>
+
+    <Line heading='Intensity'/>
+
+  </div>)
+  }
+}
+
 
 export default DeviceContainer;
