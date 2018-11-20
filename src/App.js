@@ -15,11 +15,11 @@ class App extends Component {
   render() {
     return (
       <div className='container-fluid'>
-        <div className='row col-xs-12  wrapper' >
-          <div className='col-xs-6 col-md-4 sidemenu'>
+        <div className='row' >
+          <div className='col-md-3 col-sm-3 col-xs-3 side-menu'>
             <SideMenu />
           </div>
-          <div className='col-xs-6 ol-md-8'>
+          <div className='col-md-9 col-sm-9 col-xs-9 main-content'>
             <DeviceContainer deviceDetails={deviceList[0]}/>
           </div>
         </div>

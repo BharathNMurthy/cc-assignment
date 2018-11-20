@@ -3,4 +3,52 @@ hr{
 	color: #ff66ff;
 	background-color:#ff66ff;
 	border: none;
-  }
+	}
+
+	.device-info {
+		margin:0px 0px 0px 30px;
+	}
+
+	.device-image {
+		z-index: 2;
+		position: relative;
+		width:110px;
+		height:110px;
+	}
+
+	.device-details {
+		position: relative;
+		width:140px;
+		height:110px;
+		background-color:white;
+		top: -95px;
+		left: 100px;
+		z-index:1;
+	}
+
+	.device-title {
+		text-transform: uppercase;
+		display: block;
+		text-align:center;
+		padding: 25px 0 0px 5px;
+	}
+
+	.device-desc {
+		display: block;
+		text-align:center;
+		padding:5px 0px 0px 5px;
+	}
+
+	@media all and (max-width: 768px) {
+		.device-image img {
+			width: 120px;
+			height: 120px;
+		}
+	}
+
+	@media all and (max-width: 375px) {
+		.device-image img {
+			width: 100px;
+			height: 100px;
+		}
+	}

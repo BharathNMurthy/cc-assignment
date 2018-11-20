@@ -49,3 +49,19 @@
     transform: rotate(360deg);
   }
 } */
+
+
+.side-menu {
+  background-image: linear-gradient(rgb(221, 153, 255), rgb(179, 198, 255));
+  background-color: rgb(179, 179, 255);
+}
+
+.main-content {
+  padding: 80px;
+}
+
+@media all and (max-width: 768px) {
+  .main-content {
+    padding: 40px;
+  }
+}

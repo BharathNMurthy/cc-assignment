@@ -47,8 +47,8 @@ class DeviceContainer extends Component{
     })
   }
   render() {
-    return(<div className="col-sm-12">
-    <div style={{display:'flex', marginTop:'40px'}}>
+    return(<React.Fragment>
+    <div style={{display:'flex'}}>
       <div className="col-sm-8" >
         <span style={{textTransform: 'uppercase', fontSize:'28px', fontFamily:'Montserrat-ExtraBold'}}><b>Devices</b></span>
       </div>
@@ -84,7 +84,7 @@ class DeviceContainer extends Component{
     <div style={{ margin: '25px 0 0 25px'}}>
       <RangeSelector selectIntensity={this.selectIntensity.bind(this)} intensity={this.state.intensity}/>
     </div>
-  </div>)
+  </React.Fragment>)
   }
 }
 
