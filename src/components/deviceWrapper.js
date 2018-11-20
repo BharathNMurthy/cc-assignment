@@ -4,6 +4,7 @@ import Line from './commom/line';
 import Shade from './commom/shade';
 import RangeSelector from './commom/rangeSelector';
 import './device.css';
+import './../index.css';
 
 const shades=[{id:'shade1', color:'#ff471a'}, {id:'shade2', color:'#b380ff'}, {id:'shade3', color:'#66ffff'}, {id:'shade4', color:'#0099cc'}, {id:'shade5', color:'#ffb3d9'} ];
 
@@ -49,7 +50,7 @@ class DeviceContainer extends Component{
     return(<div className="col-sm-12">
     <div style={{display:'flex', marginTop:'40px'}}>
       <div className="col-sm-8" >
-        <span style={{textTransform: 'uppercase', fontSize:'28px'}}><b>Devices</b></span>
+        <span style={{textTransform: 'uppercase', fontSize:'28px', fontFamily:'Montserrat-ExtraBold'}}><b>Devices</b></span>
       </div>
       <div className="col-sm-4 " style={{ width:'100%', height:'30px', display:'flex', justifyContent:'flex-end'}}>
         <div style={{width:'30px',backgroundColor:'#99ffce'}}>
@@ -60,21 +61,21 @@ class DeviceContainer extends Component{
 
     <div style={{display:'flex', marginTop:'40px'}}>
       <div className="col-sm-8" >
-        <span style={{textTransform: 'uppercase', fontSize:'20px'}}><b>{this.props.deviceDetails.name}</b></span>
+        <span style={{textTransform: 'uppercase', fontSize:'20px', fontFamily:'Montserrat-ExtraBoldItalic'}}><b>{this.props.deviceDetails.name}</b></span>
       </div>
     </div>
 
     <Line heading='shades'/>
 
      <div style={{display:'flex',flexDirection: 'row', marginTop:'30px', flexWrap: 'nowrap', justifyContent:'space-around'}}>
-          {shades.map((shade, index) => <Shade id={shade.id} color={shade.color} selected={this.state.slectedShade === shade.id} selectShade={this.selectShade.bind(this)}/>)}
+          {shades.map(shade=> <Shade key={shade.id} id={shade.id} color={shade.color} selected={this.state.slectedShade === shade.id} selectShade={this.selectShade.bind(this)}/>)}
     </div>
 
     <Line heading='Mode'/>
 
     <div style={{display:'flex', marginTop:'15px'}}>
       <div className="col-sm-12" style={{marginTop:'8px', flexDirection:'column'}}>
-          {modes.map((mode, index) => <Mode mode={mode} imageUrl={modeImages[mode.type]} selected={mode.id === this.state.slectedMode} selectMode={this.selectMode.bind(this)}/> )}
+          {modes.map(mode => <Mode key={mode.id} mode={mode} imageUrl={modeImages[mode.type]} selected={mode.id === this.state.slectedMode} selectMode={this.selectMode.bind(this)}/> )}
       </div>
     </div>
 
