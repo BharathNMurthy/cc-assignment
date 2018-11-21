@@ -65,3 +65,9 @@
     padding: 40px;
   }
 }
+
+@media all and (max-width: 375px) {
+  .main-content {
+    padding: 40px 0px 0px 0px;
+  }
+}

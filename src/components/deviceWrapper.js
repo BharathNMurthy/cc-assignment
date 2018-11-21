@@ -48,19 +48,19 @@ class DeviceContainer extends Component{
   }
   render() {
     return(<React.Fragment>
-    <div style={{display:'flex'}}>
-      <div className="col-sm-8" >
+    <div className="col-md-12 col-sm-12 col-xs-12" style={{display:'flex', position:'relative',paddingLeft:'0px'}}>
+      <div className="col-md-8 col-sm-8 col-xs-8" >
         <span style={{textTransform: 'uppercase', fontSize:'28px', fontFamily:'Montserrat-ExtraBold'}}><b>Devices</b></span>
       </div>
-      <div className="col-sm-4 " style={{ width:'100%', height:'30px', display:'flex', justifyContent:'flex-end'}}>
+      <div className="col-md-4 col-sm-4 col-xs-4" style={{ width:'100%', height:'30px', display:'flex', justifyContent:'flex-end'}}>
         <div style={{width:'30px',backgroundColor:'#99ffce'}}>
           <img src='/images/plus-dk.png' style={{ height: '30px'}} alt="add" />
         </div>
       </div>
     </div>
 
-    <div style={{display:'flex', marginTop:'40px'}}>
-      <div className="col-sm-8" >
+    <div style={{position:'relative', display:'flex', marginTop:'70px'}}>
+      <div className="col-md-8 col-sm-8 col-xs-8" >
         <span style={{textTransform: 'uppercase', fontSize:'20px', fontFamily:'Montserrat-ExtraBoldItalic'}}><b>{this.props.deviceDetails.name}</b></span>
       </div>
     </div>

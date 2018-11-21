@@ -39,3 +39,16 @@
     background: #4CAF50;
     cursor: pointer;
 }
+
+
+@media all and (max-width: 768px) {
+	.slidecontainer {
+		width: 80%;
+	}
+}
+
+@media all and (max-width: 375px) {
+	.slidecontainer {
+		width: 100%;
+	}
+}

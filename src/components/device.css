@@ -76,7 +76,7 @@ hr{
 
 	@media all and (max-width: 375px) {
 		.device-image img {
-			width: 50px;
+			width: 70px;
 			height: 50px;
 		}
 		.device-info {
@@ -84,7 +84,7 @@ hr{
 		}
 		.device-details {
 			position: relative;
-			width:55px;
+			width:70px;
 			height:30px;
 			background-color:white;
 			top: -77px;
