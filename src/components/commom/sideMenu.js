@@ -15,7 +15,7 @@ const SideMenu = () => (
 		<div style={{margin:'0px 0px 60px 10px'}}>
 			<img src='/images/back-wh.png' className="back-btn" alt="back" />
 		</div>
-		<div className='flex-container'>
+		<div className='flex-container scroller'>
 			{deviceList.map(device => <Device key={device.name} name={device.name} url={device.url} location={device.location}/>)}
 		</div>
 	</React.Fragment>

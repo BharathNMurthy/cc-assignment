@@ -16,10 +16,10 @@ class App extends Component {
     return (
       <div className='container-fluid'>
         <div className='row' >
-          <div className='col-md-3 col-sm-3 col-xs-3 side-menu'>
+          <div className='col-md-3 col-sm-3 col-xs-4 side-menu'>
             <SideMenu />
           </div>
-          <div className='col-md-9 col-sm-9 col-xs-9 main-content'>
+          <div className='col-md-9 col-sm-9 col-xs-8 main-content'>
             <DeviceContainer deviceDetails={deviceList[0]}/>
           </div>
         </div>
